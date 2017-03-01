@@ -1,0 +1,9 @@
+package Alarms
+public
+	device LightAlarm
+	end LightAlarm;
+	
+	device SoundAlarm
+	end SoundAlarm;
+	
+end Alarms;

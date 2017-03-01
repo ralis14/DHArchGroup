@@ -1,0 +1,106 @@
+package DHSys
+public
+	with RFModule;
+	with ApplianceSwitches;
+	with Alarms;
+	
+	with Sensors;
+	with Controllers;
+	
+	with Views;
+	with PlannerAndReports;
+	
+	system DHSystem
+	end DHSystem;
+	
+	system implementation DHSystem.imp
+		subcomponents
+			this_dhGatewayDevice: system dhGatewayDevice.imp;
+			this_applianceManager: system applianceManager.imp;
+			this_security: system security.imp;
+			this_hardware: system hardware.imp;
+			this_gui: system gui.imp;
+			this_database: system database.imp;
+			this_planners: system dhPlanner.imp;
+			this_user: system users.imp;
+			this_isp: device isp;
+	end DHSystem.imp;
+	
+	----------------------------------------------------------------
+	system dhGatewayDevice
+	end dhGatewayDevice;
+	
+	system implementation dhGatewayDevice.imp
+		subcomponents
+			this_RFModule: device RFModule::RFMod;
+	end dhGatewayDevice.imp;
+	
+	-----------------------------------------------------------------
+	system applianceManager
+	end applianceManager;
+	
+	system implementation applianceManager.imp
+		subcomponents
+			this_applianceSwitch: device ApplianceSwitches::applianceSwitch;
+	end applianceManager.imp;
+	
+	-----------------------------------------------------------------
+	system security
+	end security;
+	
+	system implementation security.imp
+		subcomponents
+			this_lightAlarm: device Alarms::LightAlarm;
+			this_soundAlarm: device Alarms::SoundAlarm;
+		
+	end security.imp;
+	
+	-------------------------------------------------------------------
+	system hardware
+	end hardware;
+	
+	system implementation hardware.imp
+		subcomponents
+			this_sensors: device Sensors::Sensor;
+			this_controllers: device Controllers::Controller;
+	end hardware.imp;
+	
+	--------------------------------------------------------------------
+	system gui
+	end gui;
+	
+	system implementation gui.imp
+		subcomponents
+			this_plannerView: system Views::PlannerView;
+			this_dhGatewayControllerView: system Views::DHGatewayControllerView;
+	end gui.imp;
+	
+	--------------------------------------------------------------------
+	system database
+	end database;
+	
+	system implementation database.imp
+	end database.imp;
+	
+	---------------------------------------------------------------------
+	system dhPlanner
+	end dhPlanner;
+	
+	system implementation dhPlanner.imp
+		subcomponents
+			this_report: system PlannerAndReports::Report;
+	end dhPlanner.imp;
+	
+	---------------------------------------------------------------------
+	system users
+	end users;
+	
+	system implementation users.imp
+	end users.imp;
+	
+	-----------------------------------------------------------------------
+	device isp
+	end isp;
+	
+	
+end DHSys;

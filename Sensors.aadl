@@ -1,0 +1,5 @@
+package Sensors
+public
+	device sensor
+	end sensor;
+end Sensors;

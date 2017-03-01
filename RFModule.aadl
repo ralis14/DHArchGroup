@@ -1,0 +1,5 @@
+package RFModule
+public
+	device RFMod
+	end RFMod;
+end RFModule;
